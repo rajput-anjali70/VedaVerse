@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Firesans';
+            src: url('fonts/Firesans-Regular.ttf') format('truetype'); /* Adjust the path and format as necessary */
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Firesans';
+            src: url('fonts/Firesans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        body, h1, p, a {
+            font-family: 'Firesans', sans-serif;
+        }
+
+        /* Navbar Link Animation */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #38b2ac; /* teal-400 */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #38b2ac; /* teal-400 */
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Main Content Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button Hover Animation */
+        .hover-bounce:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-tr from-gray-50 to-blue-50 text-gray-900">
+    <!-- Navbar -->
+    <header class="bg-navy-900 shadow-md">
+        <nav class="container mx-auto py-4">
+            <ul class="flex justify-center space-x-8">
+                <li><a href="index.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Home</a></li>
+                <li><a href="about.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">About</a></li>
+                <li><a href="contact.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Contact</a></li>
+                <li><a href="login.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-gradient-to-r from-teal-600 to-navy-700">
+        <div class="container mx-auto px-6 ">
+            <h2 class="text-3xl font-bold text-center mb-10" style="color: white; text-decoration: underline;">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Team Member 1 -->
+                <div class="bg-gray-200 rounded-lg p-6 text-center fade-in">
+                    <img src="img/bhavy.png" alt="Team Member 1" class="w-35 h-35 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Bhavy Sharma</h3>
+                    <p class="mb-4">Lead Developer</p>
+                    <a href="https://bhavy-sharma.github.io/protfolio/" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">View Portfolio</a>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="bg-gray-200 rounded-lg p-6 text-center fade-in">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 2" class="w-35 h-35 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Chetan Thakur</h3>
+                    <p class="mb-4">UI/UX Designer</p>
+                    <a href="https://github.com/bhavy-sharma/" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">View Portfolio</a>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="bg-gray-200 rounded-lg p-6 text-center fade-in">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 3" class="w-35 h-35 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Aastha Sharma</h3>
+                    <p class="mb-4">Project Manager</p>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">View Portfolio</a>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="bg-gray-200 rounded-lg p-6 text-center fade-in">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 4" class="w-35 h-35 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Gaurav Pratap Singh</h3>
+                    <p class="mb-4">Marketing Specialist</p>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">View Portfolio</a>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="bg-gray-200 rounded-lg p-6 text-center fade-in">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 5" class="w-35 h-35 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Atul Kumar Goswami</h3>
+                    <p class="mb-4">Partner</p>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">View Portfolio</a>
+                </div>
+
+                <!-- Team Member 6 -->
+                <div class="bg-gray-200 rounded-lg p-6 text-center fade-in">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 6" class="w-35 h-35 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Kratakshi Bhardwaj</h3>
+                    <p class="mb-4">Researcher</p>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">View Portfolio</a>
+                </div>
+
+                <!-- Team Member 7 -->
+                <div class="bg-gray-200 rounded-lg p-6 text-center fade-in">
+                    <img src="https://via.placeholder.com/150" alt="Team Member 7" class="w-35 h-35 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Ashad Ikram</h3>
+                    <p class="mb-4">Contributor</p>
+                    <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full">View Portfolio</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-16 bg-gradient-to-r from-teal-600 to-navy-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-10">Our Projects</h2>
+
+            <!-- Projects by Each Team Member -->
+            <div class="space-y-16">
+
+                <!-- Projects by John Doe -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Bhavy Sharma Projects</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg p-6 shadow">
+                            <h4 class="text-xl font-semibold mb-2">Project 1</h4>
+                            <p class="mb-4">Description of Project 1 goes here.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">Learn More</a>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow">
+                            <h4 class="text-xl font-semibold mb-2">Project 2</h4>
+                            <p class="mb-4">Description of Project 2 goes here.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects by Jane Smith -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Chetan Thakur Projects</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg p-6 shadow">
+                            <h4 class="text-xl font-semibold mb-2">Project 1</h4>
+                            <p class="mb-4">Description of Project 1 goes here.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">Learn More</a>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow">
+                            <h4 class="text-xl font-semibold mb-2">Project 2</h4>
+                            <p class="mb-4">Description of Project 2 goes here.</p>
+                            <a href="#" class="text-blue-600 hover:text-blue-800">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-4">
+        <p class="text-center text-white">© 2024 Our Platform. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

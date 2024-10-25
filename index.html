@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'Firesans';
+            src: url('fonts/Firesans-Regular.ttf') format('truetype'); /* Adjust the path and format as necessary */
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Firesans';
+            src: url('fonts/Firesans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        body, h1, p, a {
+            font-family: 'Firesans', sans-serif;
+        }
+
+        /* Navbar Link Animation */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #38b2ac; /* teal-400 */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #38b2ac; /* teal-400 */
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Main Content Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button Hover Animation */
+        .hover-bounce:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-tr from-gray-50 to-blue-50 text-gray-900">
+
+    <!-- Navbar -->
+    <header class="bg-navy-900 shadow-md">
+        <nav class="container mx-auto py-4">
+            <ul class="flex justify-center space-x-8">
+                <li><a href="index.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Home</a></li>
+                <li><a href="about.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">About</a></li>
+                <li><a href="contact.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Contact</a></li>
+                <li><a href="login.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content with Quote Section -->
+    <section class="h-screen flex bg-gradient-to-br from-gray-100 to-blue-100">
+        <!-- Quote Section -->
+        <div class="w-1/2 flex items-center justify-center bg-gradient-to-r from-teal-600 to-navy-700 p-12 fade-in">
+            <div class="max-w-md text-center">
+                <blockquote class="text-4xl font-bold italic text-white leading-relaxed mb-6">"Success is not final, failure is not fatal: It is the courage to continue that counts."</blockquote>
+                <p class="text-lg text-gray-200 font-medium">- Winston Churchill</p>
+            </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="w-1/2 flex items-center justify-center p-8 fade-in">
+            <div class="bg-white shadow-xl rounded-lg p-10 text-center transform hover:scale-105 transition duration-300 ease-in-out">
+                <h1 class="text-5xl font-bold mb-4 text-teal-700">Welcome to Veda Verse</h1>
+                <p class="text-xl mb-6 text-gray-600">Select your role to get started</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full shadow-md transition duration-300 ease-in-out hover-bounce">Teacher</a>
+                    <a href="#" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-full shadow-md transition duration-300 ease-in-out hover-bounce">Student</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 py-4">
+        <p class="text-center text-teal-200 text-sm hover:text-teal-400 transition duration-200">© 2024 Veda Verse. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

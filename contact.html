@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Veda Verse</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'Firesans';
+            src: url('fonts/Firesans-Regular.ttf') format('truetype'); /* Adjust the path and format as necessary */
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Firesans';
+            src: url('fonts/Firesans-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        body, h1, p, a {
+            font-family: 'Firesans', sans-serif;
+        }
+
+        /* Navbar Link Animation */
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #38b2ac; /* teal-400 */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #38b2ac; /* teal-400 */
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* Main Content Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button Hover Animation */
+        .hover-bounce:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-tr from-gray-50 to-blue-50 text-gray-900">
+    <!-- Navbar -->
+    <header class="bg-navy-900 shadow-md">
+        <nav class="container mx-auto py-4">
+            <ul class="flex justify-center space-x-8">
+                <li><a href="index.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Home</a></li>
+                <li><a href="about.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">About</a></li>
+                <li><a href="contact.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Contact</a></li>
+                <li><a href="login.html" class="text-teal-200 hover:text-teal-400 font-semibold nav-link">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="container mx-auto py-16 px-4 bg-gradient-to-r from-teal-600 to-navy-700">
+        <div class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg fade-in">
+            <h2 class="text-3xl font-bold mb-6 text-center text-blue-300">Contact Us</h2>
+            <form action="" method="POST" class="space-y-6" name="Contact-form">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" id="name" name="Name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="Email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                    <textarea id="message" name="Message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-4">
+        <p class="text-center text-white">© 2024 Veda Verse. All Rights Reserved.</p>
+    </footer>
+    <script src="js/contact-form.js"></script>
+</body>
+</html>
